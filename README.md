@@ -40,5 +40,5 @@ npm install playwright && npx playwright install chromium
 node strumenti/stampa-pdf.js         # rigenera i PDF
 ```
 
-Le canzoni non sono nel repository: i pulsanti portano a una ricerca su YouTube.
+Le canzoni non sono nel repository: i pulsanti portano ai video YouTube indicati in `dati/parole.json`.
 Tutti i disegni sono originali e il materiale non contiene dati personali.
