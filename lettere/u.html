@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>U come Uvetta</title>
+<link rel="stylesheet" href="../assets/stile.css">
+</head><body class="pagina-lettera">
+<nav class="naviga"><a class="freccia" href="t.html" aria-label="Lettera T">← T</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="v.html" aria-label="Lettera V">V →</a></nav>
+<header class="testa"><span class="lettera-grande">U</span><h1>U come <b>UVETTA</b></h1></header>
+<main>
+<section class="riquadro">
+  <button class="bottone grande" id="ascolta">🔊 Ascolta la parola</button>
+  
+</section>
+
+<section class="riquadro">
+  <h2>🖍️ Colora il disegno</h2>
+  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
+  <div class="tavolozza" id="tavolozza"></div>
+  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Uvetta"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M100 40 Q104 24 116 14" fill="none"/><path d="M106 34 Q140 10 170 30 Q150 34 148 50 Q130 40 120 52 Q112 40 106 34 Z"/><circle cx="70" cy="56" r="16"/><circle cx="100" cy="54" r="16"/><circle cx="130" cy="56" r="16"/><circle cx="56" cy="84" r="16"/><circle cx="86" cy="84" r="16"/><circle cx="116" cy="84" r="16"/><circle cx="146" cy="84" r="16"/><circle cx="70" cy="112" r="16"/><circle cx="100" cy="112" r="16"/><circle cx="130" cy="112" r="16"/><circle cx="86" cy="140" r="16"/><circle cx="116" cy="140" r="16"/><circle cx="100" cy="166" r="16"/><path d="M120 182 Q160 160 190 182 Q186 196 154 196 Q124 196 120 182 Z"/><circle cx="140" cy="178" r="5"/><circle cx="154" cy="174" r="5"/><circle cx="168" cy="178" r="5"/></g></svg></div>
+  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+</section>
+<section class="riquadro">
+  <h2>✏️ Ripassa la parola</h2>
+  <p class="aiuto">Ripassa le lettere col dito o col mouse.</p>
+  <div class="lavagna"><canvas id="sfondo"></canvas><canvas id="tratto"></canvas></div>
+  <button class="bottone" id="pulisci-lavagna">Cancella</button>
+</section>
+</main>
+<nav class="naviga"><a class="freccia" href="t.html" aria-label="Lettera T">← T</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="v.html" aria-label="Lettera V">V →</a></nav>
+<script>window.LETTERA = {"parola": "UVETTA", "lingua": "it-IT", "pronuncia": "uvetta", "tratti": {"U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "A": [60, "M0 100 L30 0 L60 100 M12 62 L48 62"], "V": [60, "M0 0 L30 100 L60 0"], "T": [60, "M0 0 L60 0 M30 0 L30 100"]}};</script>
+<script src="../assets/lettera.js"></script>
+</body></html>

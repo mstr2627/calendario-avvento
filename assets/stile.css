@@ -1,0 +1,61 @@
+:root {
+  --sfondo: #fdf6ec; --carta: #ffffff; --testo: #2b2118; --rosso: #c62828; --verde: #2e7d32;
+  --oro: #f2b705; --ombra: 0 3px 10px rgba(0,0,0,.12); --bordo: #e8dccb;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --sfondo: #1b1c22; --carta: #2a2b33; --testo: #f3efe8; --bordo: #3a3b44; --ombra: 0 3px 10px rgba(0,0,0,.5); }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--sfondo); color: var(--testo);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif; font-size: 18px; line-height: 1.4; }
+h1, h2 { margin: 0; }
+.testa { text-align: center; padding: 24px 16px 8px; }
+.testa h1 { font-size: clamp(26px, 6vw, 44px); color: var(--rosso); }
+.testa h1 span { display: block; font-size: .55em; color: var(--verde); }
+.testa p { margin: 8px 0 0; }
+
+/* Calendario */
+.calendario { list-style: none; margin: 0 auto; padding: 16px; max-width: 980px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 12px; }
+.porta { position: relative; width: 100%; aspect-ratio: 1; border: 0; padding: 0; cursor: pointer;
+  background: transparent; perspective: 600px; font: inherit; color: inherit; }
+.porta .fronte, .porta .retro { position: absolute; inset: 0; border-radius: 14px; backface-visibility: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: var(--ombra);
+  transition: transform .6s; }
+.porta .fronte { background: var(--rosso); color: #fff; font-size: 52px; font-weight: 800;
+  border: 4px dashed rgba(255,255,255,.6); }
+li:nth-child(3n+2) .porta .fronte { background: var(--verde); }
+li:nth-child(3n) .porta .fronte { background: #b8860b; }
+.porta .retro { background: #fff; color: #2b2118; transform: rotateY(180deg); padding: 6px; }
+.porta .retro svg { width: 75%; height: auto; }
+.porta .retro .parola { font-size: 12px; font-weight: 700; text-align: center; }
+.porta.aperta .fronte { transform: rotateY(-180deg); }
+.porta.aperta .retro { transform: rotateY(0); }
+.porta:focus-visible { outline: 4px solid var(--oro); border-radius: 14px; }
+
+/* Pagina della lettera */
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 24px; }
+.naviga { display: flex; justify-content: space-between; align-items: center; max-width: 760px;
+  margin: 0 auto; padding: 12px 16px; gap: 8px; }
+.naviga a { color: var(--testo); text-decoration: none; font-weight: 700; padding: 8px 14px;
+  border-radius: 999px; background: var(--carta); box-shadow: var(--ombra); }
+.lettera-grande { display: inline-grid; place-items: center; width: 84px; height: 84px; border-radius: 50%;
+  background: var(--rosso); color: #fff; font-size: 56px; font-weight: 800; margin-bottom: 8px; }
+.testa h1 b { color: var(--verde); }
+.riquadro { background: var(--carta); border: 1px solid var(--bordo); border-radius: 18px; padding: 16px;
+  margin: 16px 0; box-shadow: var(--ombra); text-align: center; }
+.riquadro h2 { font-size: 22px; margin-bottom: 6px; }
+.aiuto, .nota { margin: 6px 0 12px; }
+.nota { font-style: italic; }
+.bottone { font: inherit; font-weight: 700; border: 0; border-radius: 999px; padding: 10px 20px; cursor: pointer;
+  background: var(--verde); color: #fff; text-decoration: none; display: inline-block; margin: 6px; }
+.bottone.grande { font-size: 22px; padding: 14px 28px; background: var(--rosso); }
+.canzone .bottone.grande { background: #b8860b; }
+.tavolozza { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 12px; }
+.colore { width: 44px; height: 44px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 2px #888; cursor: pointer; }
+.colore.scelto { box-shadow: 0 0 0 4px var(--testo); transform: scale(1.1); }
+.disegno { background: #fff; border-radius: 12px; max-width: 420px; margin: 0 auto 8px; }
+.disegno svg { width: 100%; height: auto; display: block; touch-action: manipulation; cursor: pointer; }
+.lavagna { position: relative; background: #fff; border-radius: 12px; width: 100%; aspect-ratio: 3 / 1.25; margin-bottom: 8px; }
+.lavagna canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#tratto { touch-action: none; cursor: crosshair; }

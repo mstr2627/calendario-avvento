@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A come Albero</title>
+<link rel="stylesheet" href="../assets/stile.css">
+</head><body class="pagina-lettera">
+<nav class="naviga"><span></span><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="b.html" aria-label="Lettera B">B →</a></nav>
+<header class="testa"><span class="lettera-grande">A</span><h1>A come <b>ALBERO</b></h1></header>
+<main>
+<section class="riquadro">
+  <button class="bottone grande" id="ascolta">🔊 Ascolta la parola</button>
+  
+</section>
+
+<section class="riquadro">
+  <h2>🖍️ Colora il disegno</h2>
+  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
+  <div class="tavolozza" id="tavolozza"></div>
+  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Albero"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><rect x="88" y="168" width="24" height="22"/><polygon points="100,38 62,88 80,88 46,128 70,128 34,172 166,172 130,128 154,128 120,88 138,88"/><polygon points="100.0,12.0 104.7,23.5 117.1,24.4 107.6,32.5 110.6,44.6 100.0,38.0 89.4,44.6 92.4,32.5 82.9,24.4 95.3,23.5"/><circle cx="82" cy="110" r="7"/><circle cx="118" cy="148" r="7"/><circle cx="74" cy="152" r="7"/><circle cx="112" cy="76" r="6"/><path d="M70 128 Q100 140 128 124" fill="none"/></g></svg></div>
+  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+</section>
+<section class="riquadro">
+  <h2>✏️ Ripassa la parola</h2>
+  <p class="aiuto">Ripassa le lettere col dito o col mouse.</p>
+  <div class="lavagna"><canvas id="sfondo"></canvas><canvas id="tratto"></canvas></div>
+  <button class="bottone" id="pulisci-lavagna">Cancella</button>
+</section>
+</main>
+<nav class="naviga"><span></span><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="b.html" aria-label="Lettera B">B →</a></nav>
+<script>window.LETTERA = {"parola": "ALBERO", "lingua": "it-IT", "pronuncia": "albero", "tratti": {"O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "A": [60, "M0 100 L30 0 L60 100 M12 62 L48 62"], "B": [52, "M0 100 L0 0 L26 0 A22 24 0 0 1 26 48 L0 48 M26 48 A26 26 0 0 1 26 100 L0 100"], "L": [46, "M0 0 L0 100 L46 100"], "R": [54, "M0 100 L0 0 L26 0 A26 26 0 0 1 26 52 L0 52 M22 52 L54 100"]}};</script>
+<script src="../assets/lettera.js"></script>
+</body></html>

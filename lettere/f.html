@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F come Fiocco</title>
+<link rel="stylesheet" href="../assets/stile.css">
+</head><body class="pagina-lettera">
+<nav class="naviga"><a class="freccia" href="e.html" aria-label="Lettera E">← E</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="g.html" aria-label="Lettera G">G →</a></nav>
+<header class="testa"><span class="lettera-grande">F</span><h1>F come <b>FIOCCO</b></h1></header>
+<main>
+<section class="riquadro">
+  <button class="bottone grande" id="ascolta">🔊 Ascolta la parola</button>
+  
+</section>
+
+<section class="riquadro">
+  <h2>🖍️ Colora il disegno</h2>
+  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
+  <div class="tavolozza" id="tavolozza"></div>
+  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fiocco"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M94 104 L64 172 L80 164 L88 180 L106 106 Z"/><path d="M106 104 L136 172 L120 164 L112 180 L94 106 Z"/><path d="M100 98 C62 48 22 64 30 100 C36 128 74 124 100 104 Z"/><path d="M100 98 C138 48 178 64 170 100 C164 128 126 124 100 104 Z"/><path d="M100 100 C80 84 56 80 48 94" fill="none"/><path d="M100 100 C120 84 144 80 152 94" fill="none"/><rect x="86" y="86" width="28" height="26" rx="8"/></g></svg></div>
+  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+</section>
+<section class="riquadro">
+  <h2>✏️ Ripassa la parola</h2>
+  <p class="aiuto">Ripassa le lettere col dito o col mouse.</p>
+  <div class="lavagna"><canvas id="sfondo"></canvas><canvas id="tratto"></canvas></div>
+  <button class="bottone" id="pulisci-lavagna">Cancella</button>
+</section>
+</main>
+<nav class="naviga"><a class="freccia" href="e.html" aria-label="Lettera E">← E</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="g.html" aria-label="Lettera G">G →</a></nav>
+<script>window.LETTERA = {"parola": "FIOCCO", "lingua": "it-IT", "pronuncia": "fiocco", "tratti": {"C": [56, "M53 18 A30 50 0 1 0 53 82"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "I": [0, "M0 0 L0 100"], "F": [48, "M48 0 L0 0 L0 100 M0 50 L40 50"]}};</script>
+<script src="../assets/lettera.js"></script>
+</body></html>

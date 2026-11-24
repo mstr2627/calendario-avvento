@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C come Candela</title>
+<link rel="stylesheet" href="../assets/stile.css">
+</head><body class="pagina-lettera">
+<nav class="naviga"><a class="freccia" href="b.html" aria-label="Lettera B">← B</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="d.html" aria-label="Lettera D">D →</a></nav>
+<header class="testa"><span class="lettera-grande">C</span><h1>C come <b>CANDELA</b></h1></header>
+<main>
+<section class="riquadro">
+  <button class="bottone grande" id="ascolta">🔊 Ascolta la parola</button>
+  
+</section>
+
+<section class="riquadro">
+  <h2>🖍️ Colora il disegno</h2>
+  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
+  <div class="tavolozza" id="tavolozza"></div>
+  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Candela"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="182" rx="58" ry="11"/><path d="M74 84 L74 178 L126 178 L126 84 Z"/><path d="M74 84 L126 84 L126 102 Q120 112 116 100 Q110 90 104 106 Q98 118 94 100 Q88 88 82 104 Q76 112 74 100 Z"/><line x1="100" y1="84" x2="100" y2="72"/><path d="M100 22 Q126 50 112 68 Q100 80 88 68 Q74 50 100 22 Z"/><path d="M100 44 Q110 58 104 66 Q100 70 96 66 Q90 58 100 44 Z"/><g transform="translate(100 176) rotate(0) scale(1.1)"><path d="M0 0 Q8 -6 14 -4 Q14 -10 22 -10 Q22 -16 30 -16 Q30 -8 38 -6 Q30 0 30 4 Q22 4 20 10 Q14 6 8 8 Q6 2 0 0 Z"/><path d="M0 0 Q8 -6 14 -4 Q14 -10 22 -10 Q22 -16 30 -16 Q30 -8 38 -6 Q30 0 30 4 Q22 4 20 10 Q14 6 8 8 Q6 2 0 0 Z" transform="scale(-1 1)"/><circle cx="-4" cy="4" r="6"/><circle cx="5" cy="5" r="6"/><circle cx="0" cy="-3" r="6"/></g></g></svg></div>
+  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+</section>
+<section class="riquadro">
+  <h2>✏️ Ripassa la parola</h2>
+  <p class="aiuto">Ripassa le lettere col dito o col mouse.</p>
+  <div class="lavagna"><canvas id="sfondo"></canvas><canvas id="tratto"></canvas></div>
+  <button class="bottone" id="pulisci-lavagna">Cancella</button>
+</section>
+</main>
+<nav class="naviga"><a class="freccia" href="b.html" aria-label="Lettera B">← B</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="d.html" aria-label="Lettera D">D →</a></nav>
+<script>window.LETTERA = {"parola": "CANDELA", "lingua": "it-IT", "pronuncia": "candela", "tratti": {"C": [56, "M53 18 A30 50 0 1 0 53 82"], "N": [58, "M0 100 L0 0 L58 100 L58 0"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "A": [60, "M0 100 L30 0 L60 100 M12 62 L48 62"], "D": [58, "M0 0 L0 100 L18 100 A40 50 0 0 0 18 0 Z"], "L": [46, "M0 0 L0 100 L46 100"]}};</script>
+<script src="../assets/lettera.js"></script>
+</body></html>

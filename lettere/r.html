@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R come Renne</title>
+<link rel="stylesheet" href="../assets/stile.css">
+</head><body class="pagina-lettera">
+<nav class="naviga"><a class="freccia" href="q.html" aria-label="Lettera Q">← Q</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="s.html" aria-label="Lettera S">S →</a></nav>
+<header class="testa"><span class="lettera-grande">R</span><h1>R come <b>RENNE</b></h1></header>
+<main>
+<section class="riquadro">
+  <button class="bottone grande" id="ascolta">🔊 Ascolta la parola</button>
+  
+</section>
+
+<section class="riquadro">
+  <h2>🖍️ Colora il disegno</h2>
+  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
+  <div class="tavolozza" id="tavolozza"></div>
+  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Renne"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M74 70 L58 20 M64 40 L40 30 M60 30 L52 10" fill="none" stroke-width="14"/><path d="M74 70 L58 20 M64 40 L40 30 M60 30 L52 10" fill="none" stroke="#fff" stroke-width="8" data-colora="1"/><path d="M126 70 L142 20 M136 40 L160 30 M140 30 L148 10" fill="none" stroke-width="14"/><path d="M126 70 L142 20 M136 40 L160 30 M140 30 L148 10" fill="none" stroke="#fff" stroke-width="8" data-colora="1"/><path d="M60 74 Q38 58 34 80 Q44 96 66 90 Z"/><path d="M140 74 Q162 58 166 80 Q156 96 134 90 Z"/><path d="M64 70 Q100 50 136 70 Q150 110 128 150 Q112 178 100 178 Q88 178 72 150 Q50 110 64 70 Z"/><ellipse cx="100" cy="158" rx="26" ry="20"/><circle cx="100" cy="148" r="12"/><circle cx="84" cy="104" r="5" fill="#000"/><circle cx="116" cy="104" r="5" fill="#000"/><path d="M90 170 Q100 176 110 170" fill="none"/></g></svg></div>
+  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+</section>
+<section class="riquadro">
+  <h2>✏️ Ripassa la parola</h2>
+  <p class="aiuto">Ripassa le lettere col dito o col mouse.</p>
+  <div class="lavagna"><canvas id="sfondo"></canvas><canvas id="tratto"></canvas></div>
+  <button class="bottone" id="pulisci-lavagna">Cancella</button>
+</section>
+</main>
+<nav class="naviga"><a class="freccia" href="q.html" aria-label="Lettera Q">← Q</a><a class="casa" href="../index.html">Calendario</a><a class="freccia" href="s.html" aria-label="Lettera S">S →</a></nav>
+<script>window.LETTERA = {"parola": "RENNE", "lingua": "it-IT", "pronuncia": "renne", "tratti": {"R": [54, "M0 100 L0 0 L26 0 A26 26 0 0 1 26 52 L0 52 M22 52 L54 100"], "N": [58, "M0 100 L0 0 L58 100 L58 0"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"]}};</script>
+<script src="../assets/lettera.js"></script>
+</body></html>
