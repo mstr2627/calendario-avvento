@@ -12,12 +12,12 @@
   
 </section>
 
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fiocco"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M94 104 L64 172 L80 164 L88 180 L106 106 Z"/><path d="M106 104 L136 172 L120 164 L112 180 L94 106 Z"/><path d="M100 98 C62 48 22 64 30 100 C36 128 74 124 100 104 Z"/><path d="M100 98 C138 48 178 64 170 100 C164 128 126 124 100 104 Z"/><path d="M100 100 C80 84 56 80 48 94" fill="none"/><path d="M100 100 C120 84 144 80 152 94" fill="none"/><rect x="86" y="86" width="28" height="26" rx="8"/></g></svg></div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -26,6 +26,8 @@
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-<script>window.LETTERA = {"parola": "FIOCCO", "lingua": "it-IT", "pronuncia": "fiocco", "tratti": {"I": [0, "M0 0 L0 100"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "F": [48, "M48 0 L0 0 L0 100 M0 50 L40 50"], "C": [56, "M53 18 A30 50 0 1 0 53 82"]}};</script>
+<script>window.LETTERA = {"parola": "FIOCCO", "lingua": "it-IT", "pronuncia": "fiocco", "tratti": {"F": [48, "M48 0 L0 0 L0 100 M0 50 L40 50"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "C": [56, "M53 18 A30 50 0 1 0 53 82"], "I": [0, "M0 0 L0 100"]}};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/f.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>

@@ -12,12 +12,12 @@
   
 </section>
 
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Luci"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M6 56 Q54 96 100 56 Q146 16 194 56" fill="none"/><path d="M6 132 Q54 172 100 132 Q146 92 194 132" fill="none"/><g transform="translate(30.0 70.0) rotate(15)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(66.0 78.0) rotate(-5)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(122.0 40.0) rotate(-20)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(160.0 42.0) rotate(10)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(30.0 146.0) rotate(15)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(66.0 154.0) rotate(-5)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(122.0 116.0) rotate(-20)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g><g transform="translate(160.0 118.0) rotate(10)"><rect x="-7" y="0" width="14" height="12" rx="2"/><path d="M0 12 C-16 18 -14 44 0 50 C14 44 16 18 0 12 Z"/></g></g></svg></div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -26,6 +26,8 @@
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-<script>window.LETTERA = {"parola": "LUCI", "lingua": "it-IT", "pronuncia": "luci", "tratti": {"I": [0, "M0 0 L0 100"], "L": [46, "M0 0 L0 100 L46 100"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"], "C": [56, "M53 18 A30 50 0 1 0 53 82"]}};</script>
+<script>window.LETTERA = {"parola": "LUCI", "lingua": "it-IT", "pronuncia": "luci", "tratti": {"I": [0, "M0 0 L0 100"], "C": [56, "M53 18 A30 50 0 1 0 53 82"], "L": [46, "M0 0 L0 100 L46 100"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"]}};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/l.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>

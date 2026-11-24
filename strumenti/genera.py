@@ -174,12 +174,12 @@ def pagina_lettera(v):
   {nota}
 </section>
 {canzone}
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno">{svg_disegno(L, 'role="img" aria-label="' + html.escape(parola.title()) + '"')}</div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -189,6 +189,8 @@ def pagina_lettera(v):
 </section>
 </main>
 <script>window.LETTERA = {dati};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/{L.lower()}.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>
 """

@@ -12,12 +12,12 @@
   
 </section>
 
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zucchero A Velo"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="182" rx="76" ry="12"/><path d="M56 178 L68 88 L100 62 L132 88 L144 178 Z"/><path d="M84 76 L78 178 M116 76 L122 178 M100 62 L100 178" fill="none"/><path d="M68 88 Q100 104 132 88 L132 96 Q100 112 68 96 Z"/><path d="M70 80 Q100 50 130 80 Q120 70 100 72 Q80 70 70 80 Z"/><ellipse cx="148" cy="24" rx="34" ry="12"/><path d="M114 24 Q114 50 148 50 Q182 50 182 24" /><line x1="182" y1="24" x2="198" y2="8"/><circle cx="136" cy="60" r="2.5"/><circle cx="152" cy="64" r="2.5"/><circle cx="126" cy="72" r="2.5"/><circle cx="144" cy="76" r="2.5"/><circle cx="160" cy="70" r="2.5"/><circle cx="118" cy="58" r="2.5"/><circle cx="108" cy="70" r="2.5"/><circle cx="140" cy="86" r="2.5"/></g></svg></div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -26,6 +26,8 @@
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-<script>window.LETTERA = {"parola": "ZUCCHERO A VELO", "lingua": "it-IT", "pronuncia": "zucchero a velo", "tratti": {"E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "A": [60, "M0 100 L30 0 L60 100 M12 62 L48 62"], "H": [56, "M0 0 L0 100 M56 0 L56 100 M0 50 L56 50"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"], "C": [56, "M53 18 A30 50 0 1 0 53 82"], "R": [54, "M0 100 L0 0 L26 0 A26 26 0 0 1 26 52 L0 52 M22 52 L54 100"], "V": [60, "M0 0 L30 100 L60 0"], "Z": [56, "M0 0 L56 0 L0 100 L56 100"], "L": [46, "M0 0 L0 100 L46 100"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"]}};</script>
+<script>window.LETTERA = {"parola": "ZUCCHERO A VELO", "lingua": "it-IT", "pronuncia": "zucchero a velo", "tratti": {"E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "Z": [56, "M0 0 L56 0 L0 100 L56 100"], "V": [60, "M0 0 L30 100 L60 0"], "L": [46, "M0 0 L0 100 L46 100"], "A": [60, "M0 100 L30 0 L60 100 M12 62 L48 62"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "H": [56, "M0 0 L0 100 M56 0 L56 100 M0 50 L56 50"], "R": [54, "M0 100 L0 0 L26 0 A26 26 0 0 1 26 52 L0 52 M22 52 L54 100"], "C": [56, "M53 18 A30 50 0 1 0 53 82"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"]}};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/z.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>

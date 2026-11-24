@@ -13,39 +13,6 @@
     speechSynthesis.speak(u);
   });
 
-  // Colora il disegno
-  var COLORI = ['#e53935', '#43a047', '#fdd835', '#1e88e5', '#8e24aa', '#fb8c00', '#6d4c41', '#f48fb1', '#90caf9', '#ffffff'];
-  var scelto = COLORI[0];
-  var tav = document.getElementById('tavolozza');
-  COLORI.forEach(function (c, i) {
-    var b = document.createElement('button');
-    b.className = 'colore' + (i === 0 ? ' scelto' : '');
-    b.style.background = c; b.setAttribute('aria-label', 'Colore ' + (i + 1));
-    b.addEventListener('click', function () {
-      scelto = c;
-      tav.querySelectorAll('.colore').forEach(function (x) { x.classList.remove('scelto'); });
-      b.classList.add('scelto');
-    });
-    tav.appendChild(b);
-  });
-  var disegno = document.querySelector('#disegno svg');
-  var originali = [];
-  disegno.addEventListener('click', function (e) {
-    var el = e.target;
-    if (!(el instanceof SVGElement) || el === disegno) return;
-    if (el.dataset.colora) { originali.push([el, 'stroke', el.getAttribute('stroke')]); el.setAttribute('stroke', scelto); return; }
-    var f = getComputedStyle(el).fill;
-    if (f === 'none' || f === 'rgb(0, 0, 0)') return;
-    originali.push([el, 'fill', el.getAttribute('fill')]);
-    el.setAttribute('fill', scelto);
-  });
-  document.getElementById('pulisci-disegno').addEventListener('click', function () {
-    while (originali.length) {
-      var o = originali.pop();
-      if (o[2] === null) o[0].removeAttribute(o[1]); else o[0].setAttribute(o[1], o[2]);
-    }
-  });
-
   // Ripassa la parola
   var sfondo = document.getElementById('sfondo');
   var tratto = document.getElementById('tratto');
@@ -107,7 +74,7 @@
   tratto.addEventListener('pointermove', function (e) {
     if (!giu) return;
     var p = pos(e);
-    ctxT.strokeStyle = scelto === '#ffffff' ? '#1e88e5' : scelto; ctxT.lineWidth = 7; ctxT.lineCap = 'round';
+    ctxT.strokeStyle = '#1e88e5'; ctxT.lineWidth = 7; ctxT.lineCap = 'round';
     ctxT.beginPath(); ctxT.moveTo(ultimo[0], ultimo[1]); ctxT.lineTo(p[0], p[1]); ctxT.stroke();
     ultimo = p;
   });

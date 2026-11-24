@@ -12,12 +12,12 @@
   
 </section>
 
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Elfo"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><path d="M64 108 L22 86 L68 136 Z"/><path d="M136 108 L178 86 L132 136 Z"/><circle cx="100" cy="122" r="42"/><path d="M58 98 L104 22 L142 98 Z"/><circle cx="104" cy="20" r="9"/><path d="M54 98 L64 112 L74 98 L84 112 L94 98 L104 112 L114 98 L124 112 L134 98 L146 112 L146 92 L54 92 Z"/><circle cx="86" cy="122" r="4" fill="#000"/><circle cx="114" cy="122" r="4" fill="#000"/><path d="M84 140 Q100 154 116 140" fill="none"/><circle cx="74" cy="138" r="7"/><circle cx="126" cy="138" r="7"/></g></svg></div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -26,6 +26,8 @@
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-<script>window.LETTERA = {"parola": "ELFO", "lingua": "it-IT", "pronuncia": "elfo", "tratti": {"O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "L": [46, "M0 0 L0 100 L46 100"], "F": [48, "M48 0 L0 0 L0 100 M0 50 L40 50"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"]}};</script>
+<script>window.LETTERA = {"parola": "ELFO", "lingua": "it-IT", "pronuncia": "elfo", "tratti": {"L": [46, "M0 0 L0 100 L46 100"], "F": [48, "M48 0 L0 0 L0 100 M0 50 L40 50"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"]}};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/e.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>

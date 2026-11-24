@@ -12,12 +12,12 @@
   <p class="nota">È il tronchetto di Natale, un dolce a forma di ceppo di legno.</p>
 </section>
 
-<section class="riquadro">
-  <h2>🖍️ Colora il disegno</h2>
-  <p class="aiuto">Scegli un colore e tocca una parte del disegno.</p>
-  <div class="tavolozza" id="tavolozza"></div>
-  <div class="disegno" id="disegno"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Yule Log"><g fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"><ellipse cx="100" cy="174" rx="90" ry="16"/><path d="M44 88 L160 88 A22 40 0 0 1 160 168 L44 168 Z"/><ellipse cx="44" cy="128" rx="22" ry="40"/><path d="M44 128 m-4 0 a4 4 0 1 1 8 0 a9 9 0 1 1 -18 0 a14 14 0 1 1 28 0 a18 22 0 1 1 -36 4" fill="none"/><path d="M80 106 Q110 112 140 104 M76 134 Q112 142 150 130 M84 156 Q116 162 152 152" fill="none"/><path d="M120 88 L124 70 L136 72 L134 88 Z"/><g transform="translate(90 80) rotate(0) scale(1.1)"><path d="M0 0 Q8 -6 14 -4 Q14 -10 22 -10 Q22 -16 30 -16 Q30 -8 38 -6 Q30 0 30 4 Q22 4 20 10 Q14 6 8 8 Q6 2 0 0 Z"/><path d="M0 0 Q8 -6 14 -4 Q14 -10 22 -10 Q22 -16 30 -16 Q30 -8 38 -6 Q30 0 30 4 Q22 4 20 10 Q14 6 8 8 Q6 2 0 0 Z" transform="scale(-1 1)"/><circle cx="-4" cy="4" r="6"/><circle cx="5" cy="5" r="6"/><circle cx="0" cy="-3" r="6"/></g></g></svg></div>
-  <button class="bottone" id="pulisci-disegno">Ricomincia</button>
+<section class="riquadro attivita" id="attivita">
+  <h2 class="titolo-attivita"></h2>
+  <p class="aiuto istruzioni"></p>
+  <button class="bottone leggi-istruzioni">🔊 Leggi le istruzioni</button>
+  <div class="campo"></div>
+  <button class="bottone ricomincia">↺ Ricomincia</button>
 </section>
 <section class="riquadro">
   <h2>✏️ Ripassa la parola</h2>
@@ -26,6 +26,8 @@
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-<script>window.LETTERA = {"parola": "YULE LOG", "lingua": "en-GB", "pronuncia": "yule log", "tratti": {"G": [60, "M53 18 A30 50 0 1 0 60 55 L34 55"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"], "Y": [60, "M0 0 L30 50 L60 0 M30 50 L30 100"], "L": [46, "M0 0 L0 100 L46 100"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"]}};</script>
+<script>window.LETTERA = {"parola": "YULE LOG", "lingua": "en-GB", "pronuncia": "yule log", "tratti": {"G": [60, "M53 18 A30 50 0 1 0 60 55 L34 55"], "E": [48, "M48 0 L0 0 L0 100 L48 100 M0 50 L40 50"], "L": [46, "M0 0 L0 100 L46 100"], "Y": [60, "M0 0 L30 50 L60 0 M30 50 L30 100"], "O": [64, "M32 0 A32 50 0 1 1 32 100 A32 50 0 1 1 32 0 Z"], "U": [56, "M0 0 L0 68 C0 90 12 100 28 100 C44 100 56 90 56 68 L56 0"]}};</script>
+<script src="../assets/attivita/comune.js"></script>
+<script src="../assets/attivita/y.js"></script>
 <script src="../assets/lettera.js"></script>
 </body></html>
