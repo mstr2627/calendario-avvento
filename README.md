@@ -23,6 +23,7 @@ codici in `dati/parole.json`), non hanno link alle altre lettere e la pagina ini
 
 - [`stampa/carte-8.pdf`](stampa/carte-8.pdf): 8 carte per foglio A4 (4 fogli)
 - [`stampa/carte-12.pdf`](stampa/carte-12.pdf): 12 carte per foglio A4 (3 fogli)
+- [`stampa/carte-8-senza-qr.pdf`](stampa/carte-8-senza-qr.pdf) e [`stampa/carte-12-senza-qr.pdf`](stampa/carte-12-senza-qr.pdf): le stesse carte senza QR, con il disegno più grande
 
 Stampare al 100% (senza "adatta alla pagina") e ritagliare lungo le linee tratteggiate grigie.
 

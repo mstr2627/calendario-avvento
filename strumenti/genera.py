@@ -90,16 +90,19 @@ CORNICE_RAGGIO = 3.5  # raggio degli angoli arrotondati (mm)
 
 def carta(v, W, H, lato_qr):
     m = 3.5
-    cornice = lato_qr + 2 * CORNICE_PAD
+    con_qr = lato_qr > 0
+    cornice = lato_qr + 2 * CORNICE_PAD if con_qr else 0
     fx, fy = W - m - cornice, m
     # Spazio per il disegno: centrato nella carta se non tocca il QR,
     # altrimenti centrato nella parte a sinistra del QR.
-    spazio_centrato = W - 2 * (cornice + m + 1)
-    spazio_sinistra = fx - 2 - m
+    spazio_centrato = W - 2 * (cornice + m + (1 if con_qr else 0))
+    spazio_sinistra = fx - 2 - m if con_qr else spazio_centrato
     # Prova parola su una riga (disegno grande) o su due righe (disegno più piccolo):
     # vince quella con le lettere più alte; a parità, una riga.
     scelte = []
-    for quota, n in ((0.6, 1), (0.46, 2)):
+    # Senza QR il disegno può essere più grande.
+    quote = ((0.6, 1), (0.46, 2)) if con_qr else ((0.72, 1), (0.58, 2))
+    for quota, n in quote:
         img = min(H * quota, max(spazio_centrato, spazio_sinistra))
         zona = (m, m + img + 1.5, W - 2 * m, H - (m + img + 1.5) - m)
         # La scritta resta più piccola del disegno (come nell'esempio di Chiara).
@@ -113,9 +116,9 @@ def carta(v, W, H, lato_qr):
         f'<rect x="0.15" y="0.15" width="{W - 0.3}" height="{H - 0.3}" fill="#fff" stroke="#bbb" '
         f'stroke-width="0.3" stroke-dasharray="2 1.5"/>',
         svg_disegno(v["lettera"], f'x="{ix:.2f}" y="{m}" width="{img:.2f}" height="{img:.2f}"'),
-        f'<rect x="{fx:.2f}" y="{fy:.2f}" width="{cornice:.2f}" height="{cornice:.2f}" rx="{CORNICE_RAGGIO}" '
-        f'fill="#fff" stroke="#000" stroke-width="{CORNICE_TRATTO}"/>',
-        qr_svg(url_lettera(v), fx + CORNICE_PAD, fy + CORNICE_PAD, lato_qr),
+        (f'<rect x="{fx:.2f}" y="{fy:.2f}" width="{cornice:.2f}" height="{cornice:.2f}" rx="{CORNICE_RAGGIO}" '
+         f'fill="#fff" stroke="#000" stroke-width="{CORNICE_TRATTO}"/>'
+         + qr_svg(url_lettera(v), fx + CORNICE_PAD, fy + CORNICE_PAD, lato_qr)) if con_qr else "",
         parola_svg(v["parola"], *zona, n, s_max),
         "</svg>",
     ]
@@ -157,7 +160,7 @@ def pagina_lettera(v):
         canzone = (f'<section class="riquadro canzone"><h2>🎵 La canzone</h2>'
                    f'<a class="bottone grande" href="{html.escape(c["url"])}" target="_blank" rel="noopener">'
                    f'Ascolta «{html.escape(c["titolo"])}»</a></section>')
-    tratti = {ch: TRATTI[ch] for ch in set(parola.replace(" ", ""))}
+    tratti = {ch: TRATTI[ch] for ch in sorted(set(parola.replace(" ", "")))}
     dati = json.dumps({"parola": parola, "lingua": lingua, "pronuncia": v.get("pronuncia", parola.lower()),
                        "tratti": tratti}, ensure_ascii=False)
     return f"""<!doctype html>
@@ -224,6 +227,8 @@ def main():
     scrivi("index.html", pagina_indice())
     scrivi("stampa/carte-8.html", pagina_stampa(2, 4, 25))
     scrivi("stampa/carte-12.html", pagina_stampa(3, 4, 20))
+    scrivi("stampa/carte-8-senza-qr.html", pagina_stampa(2, 4, 0))
+    scrivi("stampa/carte-12-senza-qr.html", pagina_stampa(3, 4, 0))
     print(f"Fatto: {len(PAROLE)} lettere.")
 
 

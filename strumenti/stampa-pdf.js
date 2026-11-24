@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  for (const nome of ['carte-8', 'carte-12', 'insegnante']) {
+  for (const nome of ['carte-8', 'carte-12', 'carte-8-senza-qr', 'carte-12-senza-qr', 'insegnante']) {
     const html = path.resolve(__dirname, '..', 'stampa', nome + '.html');
     if (!fs.existsSync(html)) continue;
     await page.goto('file://' + html);
