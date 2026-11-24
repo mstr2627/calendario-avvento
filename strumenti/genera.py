@@ -83,26 +83,39 @@ def parola_svg(parola, x0, y0, w, h, n, s_max):
     return "".join(out)
 
 
+CORNICE_PAD = 1.6     # spazio tra il QR e la cornice (mm)
+CORNICE_TRATTO = 0.6  # spessore della cornice (mm)
+CORNICE_RAGGIO = 3.5  # raggio degli angoli arrotondati (mm)
+
+
 def carta(v, W, H, lato_qr):
     m = 3.5
+    cornice = lato_qr + 2 * CORNICE_PAD
+    fx, fy = W - m - cornice, m
+    # Spazio per il disegno: centrato nella carta se non tocca il QR,
+    # altrimenti centrato nella parte a sinistra del QR.
+    spazio_centrato = W - 2 * (cornice + m + 1)
+    spazio_sinistra = fx - 2 - m
     # Prova parola su una riga (disegno grande) o su due righe (disegno più piccolo):
     # vince quella con le lettere più alte; a parità, una riga.
     scelte = []
     for quota, n in ((0.6, 1), (0.46, 2)):
-        img = min(H * quota, W - 2 * (lato_qr + m + 1))
+        img = min(H * quota, max(spazio_centrato, spazio_sinistra))
         zona = (m, m + img + 1.5, W - 2 * m, H - (m + img + 1.5) - m)
         # La scritta resta più piccola del disegno (come nell'esempio di Chiara).
         s_max = ALTEZZA_SCRITTA * H * 0.6 / 100
         s = min(misura_parola(v["parola"], zona[2], zona[3], n)[0], s_max)
         scelte.append((s * (1.0 if n == 1 else 0.85), img, zona, n, s_max))
     _, img, zona, n, s_max = max(scelte, key=lambda c: c[0])
-    ix = (W - img) / 2
+    ix = (W - img) / 2 if img <= spazio_centrato else m + (spazio_sinistra - img) / 2
     parti = [
         f'<svg class="carta" width="{W}mm" height="{H}mm" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">',
         f'<rect x="0.15" y="0.15" width="{W - 0.3}" height="{H - 0.3}" fill="#fff" stroke="#bbb" '
         f'stroke-width="0.3" stroke-dasharray="2 1.5"/>',
         svg_disegno(v["lettera"], f'x="{ix:.2f}" y="{m}" width="{img:.2f}" height="{img:.2f}"'),
-        qr_svg(url_lettera(v), W - m - lato_qr, m, lato_qr),
+        f'<rect x="{fx:.2f}" y="{fy:.2f}" width="{cornice:.2f}" height="{cornice:.2f}" rx="{CORNICE_RAGGIO}" '
+        f'fill="#fff" stroke="#000" stroke-width="{CORNICE_TRATTO}"/>',
+        qr_svg(url_lettera(v), fx + CORNICE_PAD, fy + CORNICE_PAD, lato_qr),
         parola_svg(v["parola"], *zona, n, s_max),
         "</svg>",
     ]
@@ -207,8 +220,8 @@ def main():
         scrivi(f"qr/{L}.svg", qr_svg(url_lettera(v)) + "\n")
         scrivi(f"p/{v['codice']}.html", pagina_lettera(v))
     scrivi("index.html", pagina_indice())
-    scrivi("stampa/carte-8.html", pagina_stampa(2, 4, 17))
-    scrivi("stampa/carte-12.html", pagina_stampa(3, 4, 13))
+    scrivi("stampa/carte-8.html", pagina_stampa(2, 4, 25))
+    scrivi("stampa/carte-12.html", pagina_stampa(3, 4, 20))
     print(f"Fatto: {len(PAROLE)} lettere.")
 
 
