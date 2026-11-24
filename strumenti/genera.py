@@ -7,7 +7,7 @@ Uso (dalla cartella principale del repo):
 Crea:
     disegni/<lettera>.svg   disegni da colorare
     qr/<lettera>.svg        QR code verso la pagina della lettera
-    lettere/<lettera>.html  pagina del sito per ogni lettera
+    p/<codice>.html         pagina del sito per ogni lettera (nome casuale: è una sorpresa)
     index.html              il calendario sul sito
     stampa/carte-8.html     8 carte per foglio A4
     stampa/carte-12.html    12 carte per foglio A4
@@ -38,7 +38,7 @@ def scrivi(rel, testo):
 
 
 def url_lettera(v):
-    return f"{SITO}lettere/{v['lettera'].lower()}.html"
+    return f"{SITO}p/{v['codice']}.html"
 
 
 def qr_path(url):
@@ -133,17 +133,7 @@ html, body {{ margin: 0; padding: 0; background: #fff; }}
 """
 
 
-def nav(i):
-    prec = PAROLE[i - 1] if i > 0 else None
-    succ = PAROLE[i + 1] if i < len(PAROLE) - 1 else None
-    a = (f'<a class="freccia" href="{prec["lettera"].lower()}.html" aria-label="Lettera {prec["lettera"]}">'
-         f'← {prec["lettera"]}</a>') if prec else '<span></span>'
-    b = (f'<a class="freccia" href="{succ["lettera"].lower()}.html" aria-label="Lettera {succ["lettera"]}">'
-         f'{succ["lettera"]} →</a>') if succ else '<span></span>'
-    return f'<nav class="naviga">{a}<a class="casa" href="../index.html">Calendario</a>{b}</nav>'
-
-
-def pagina_lettera(i, v):
+def pagina_lettera(v):
     L = v["lettera"]
     parola = v["parola"]
     lingua = "en-GB" if v["lingua"] == "en" else "it-IT"
@@ -161,9 +151,9 @@ def pagina_lettera(i, v):
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{L} come {parola.title()}</title>
+<meta name="robots" content="noindex">
 <link rel="stylesheet" href="../assets/stile.css">
 </head><body class="pagina-lettera">
-{nav(i)}
 <header class="testa"><span class="lettera-grande">{L}</span><h1>{L} come <b>{html.escape(parola)}</b></h1></header>
 <main>
 <section class="riquadro">
@@ -185,45 +175,37 @@ def pagina_lettera(i, v):
   <button class="bottone" id="pulisci-lavagna">Cancella</button>
 </section>
 </main>
-{nav(i)}
 <script>window.LETTERA = {dati};</script>
 <script src="../assets/lettera.js"></script>
 </body></html>
 """
 
 
-NASCOSTO = 'aria-hidden="true"'
-
-
 def pagina_indice():
-    porte = []
-    for v in PAROLE:
-        L = v["lettera"]
-        porte.append(
-            f'<li><button class="porta" data-lettera="{L}" aria-label="Apri la lettera {L}">'
-            f'<span class="fronte">{L}</span>'
-            f'<span class="retro">{svg_disegno(L, NASCOSTO)}<span class="parola">{html.escape(v["parola"])}</span></span>'
-            f'</button></li>')
-    return f"""<!doctype html>
+    # Nessun elenco e nessun link alle lettere: ogni lettera si scopre solo col suo QR code.
+    return """<!doctype html>
 <html lang="it"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Calendario dell'Avvento</title>
 <link rel="stylesheet" href="assets/stile.css">
 </head><body class="pagina-indice">
-<header class="testa"><h1>Calendario dell'Avvento <span>dalla A alla Z</span></h1>
-<p>Tocca una lettera per aprire la sua finestrella!</p></header>
-<main><ol class="calendario">{''.join(porte)}</ol></main>
-<script src="assets/calendario.js"></script>
+<header class="testa"><h1>Calendario dell'Avvento <span>dalla A alla Z</span></h1></header>
+<main><section class="riquadro benvenuto">
+<p class="stelle" aria-hidden="true">⭐ 🎄 ⭐</p>
+<p>Ogni lettera è una sorpresa!</p>
+<p>Pesca la tua carta dal calendario e inquadra il <b>QR code</b> con un telefono o un tablet
+per scoprire la tua parola, ascoltarla, colorarla e ripassarla.</p>
+</section></main>
 </body></html>
 """
 
 
 def main():
-    for i, v in enumerate(PAROLE):
+    for v in PAROLE:
         L = v["lettera"].lower()
         scrivi(f"disegni/{L}.svg", svg_disegno(v["lettera"]) + "\n")
         scrivi(f"qr/{L}.svg", qr_svg(url_lettera(v)) + "\n")
-        scrivi(f"lettere/{L}.html", pagina_lettera(i, v))
+        scrivi(f"p/{v['codice']}.html", pagina_lettera(v))
     scrivi("index.html", pagina_indice())
     scrivi("stampa/carte-8.html", pagina_stampa(2, 4, 17))
     scrivi("stampa/carte-12.html", pagina_stampa(3, 4, 13))

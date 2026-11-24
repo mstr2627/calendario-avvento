@@ -6,12 +6,17 @@ una parola natalizia per ogni lettera dell'alfabeto, con
 - una **carta da stampare** per ogni lettera: disegno in bianco e nero da colorare,
   prima lettera grande e vuota da colorare, altre lettere tratteggiate da ripassare;
 - un **QR code** su ogni carta che apre la pagina della lettera sul sito;
-- un **sito** con il calendario e, per ogni lettera, la parola letta ad alta voce,
+- un **sito** con una pagina per ogni lettera con la parola letta ad alta voce,
   il disegno da colorare col dito, la parola da ripassare e (per Jingle Bells,
   Kris Kringle e White Christmas) il link alla canzone.
 
 Sito: https://wootr0p.github.io/calendario-avvento/ (pubblicato da GitHub Pages dal ramo `gh-pages`:
 dopo ogni modifica su `main` aggiornare anche `gh-pages`, per esempio con `git push origin main:gh-pages`).
+
+## Lettere a sorpresa
+
+Ogni lettera si scopre solo col suo QR code: le pagine hanno un nome casuale (`p/<codice>.html`,
+codici in `dati/parole.json`), non hanno link alle altre lettere e la pagina iniziale non le elenca.
 
 ## Stampare
 
