@@ -10,7 +10,8 @@ una parola natalizia per ogni lettera dell'alfabeto, con
   il disegno da colorare col dito, la parola da ripassare e (per Jingle Bells,
   Kris Kringle e White Christmas) il link alla canzone.
 
-Sito: https://wootr0p.github.io/calendario-avvento/
+Sito: https://wootr0p.github.io/calendario-avvento/ (pubblicato da GitHub Pages dal ramo `gh-pages`:
+dopo ogni modifica su `main` aggiornare anche `gh-pages`, per esempio con `git push origin main:gh-pages`).
 
 ## Stampare
 
