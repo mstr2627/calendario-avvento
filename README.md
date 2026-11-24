@@ -11,7 +11,7 @@ una parola natalizia per ogni lettera dell'alfabeto, con
   lette ad alta voce), poi la parola da ripassare col dito. Per Jingle Bells, Kris Kringle e
   White Christmas c'è anche il link alla canzone.
 
-Sito: https://wootr0p.github.io/calendario-avvento/ (pubblicato da GitHub Pages dal ramo `gh-pages`:
+Sito: https://mstr2627.github.io/calendario-avvento/ (pubblicato da GitHub Pages dal ramo `gh-pages`:
 dopo ogni modifica su `main` aggiornare anche `gh-pages`, per esempio con `git push origin main:gh-pages`).
 
 ## Lettere a sorpresa

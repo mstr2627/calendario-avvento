@@ -26,7 +26,7 @@ from lettere import (MARGINE, TRATTI, larghezza_riga, righe_per,  # noqa: E402
                      svg_riga)
 
 RADICE = os.path.dirname(QUI)
-SITO = "https://wootr0p.github.io/calendario-avvento/"
+SITO = "https://mstr2627.github.io/calendario-avvento/"
 PAROLE = json.load(open(os.path.join(RADICE, "dati", "parole.json"), encoding="utf-8"))
 
 
