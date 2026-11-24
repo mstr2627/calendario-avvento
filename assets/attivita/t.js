@@ -4,9 +4,10 @@ Attivita.registra({
   proporzioni: '4 / 3',
   avvia: function (c, a) {
     c.style.background = '#fff3e0';
-    var numeri = a.mescola(Array.from({ length: 20 }, function (_, i) { return i + 1; })).slice(0, 15);
-    var righe = [numeri.slice(0, 5).sort(function (x, y) { return x - y; }), numeri.slice(5, 10).sort(function (x, y) { return x - y; }),
-      numeri.slice(10, 15).sort(function (x, y) { return x - y; })];
+    // Solo i numeri da 1 a 10: due righe da cinque, in ordine sparso.
+    var numeri = a.mescola([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    var ordina = function (x, y) { return x - y; };
+    var righe = [numeri.slice(0, 5).sort(ordina), numeri.slice(5, 10).sort(ordina)];
     var daEstrarre = a.mescola(numeri), attuale = null;
     var tabella = a.el('div', '', null, c);
     tabella.style.cssText = 'position:absolute;left:4%;right:4%;top:36%;bottom:5%;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5cqw;' +
@@ -15,7 +16,7 @@ Attivita.registra({
     righe.forEach(function (riga, r) {
       riga.forEach(function (n) {
         var d = a.el('button', '', String(n), tabella);
-        d.style.cssText = 'font:inherit;font-weight:800;font-size:7cqw;border:0;border-radius:1.5cqw;background:#fff;color:#2b2118;cursor:pointer;position:relative;';
+        d.style.cssText = 'font:inherit;font-weight:800;font-size:9cqw;border:0;border-radius:1.5cqw;background:#fff;color:#2b2118;cursor:pointer;position:relative;';
         d.dataset.riga = r;
         celle[n] = d;
         d.addEventListener('click', function () {
